@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷速｜稳定入口 · 页面说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            background: linear-gradient(145deg, #fce4d6 0%, #f8d5c0 40%, #f7cbb5 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1.5rem;
+            line-height: 1.6;
+            color: #2c241d;
+        }
+
+        .page {
+            max-width: 1000px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2.2rem;
+        }
+
+        /* 卡片通用设计 */
+        .card {
+            background: #fffaf7;
+            border-radius: 28px;
+            padding: 2.5rem 2.8rem;
+            box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(140, 80, 50, 0.06);
+            transition: transform 0.15s ease;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 2rem 1.5rem;
+                border-radius: 20px;
+            }
+        }
+
+        /* hero 区 */
+        .hero {
+            text-align: center;
+            padding: 3.5rem 2.8rem 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            color: #4a2c1f;
+            background: linear-gradient(90deg, #6f3f27, #a05f3c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .sub {
+            font-size: 1.15rem;
+            color: #6a4f3d;
+            max-width: 650px;
+            margin: 0 auto;
+            border-top: 2px solid #e5cdbc;
+            padding-top: 1.1rem;
+            margin-top: 0.2rem;
+        }
+
+        /* 优势区：四列网格 */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            padding: 0;
+        }
+
+        .grid-4 .card {
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+        }
+
+        .grid-4 h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #5d3a27;
+            margin-bottom: 0.5rem;
+        }
+
+        .grid-4 p {
+            font-size: 0.95rem;
+            color: #5a4438;
+        }
+
+        @media (max-width: 720px) {
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 420px) {
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 说明区：双栏 */
+        .split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+        }
+
+        .split .card {
+            padding: 2rem 2rem;
+        }
+
+        .split h2 {
+            font-size: 1.6rem;
+            font-weight: 550;
+            color: #4a2c1f;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .split p {
+            margin-bottom: 0.9rem;
+            color: #4d382b;
+        }
+
+        .split ul {
+            list-style: none;
+            margin-top: 0.6rem;
+        }
+
+        .split li {
+            padding: 0.4rem 0;
+            padding-left: 1.6rem;
+            position: relative;
+            color: #3f2d21;
+        }
+
+        .split li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #b8734a;
+            font-weight: bold;
+        }
+
+        @media (max-width: 680px) {
+            .split {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary .card {
+            padding: 2rem 2.8rem;
+        }
+
+        .faq-summary h2 {
+            font-size: 1.6rem;
+            font-weight: 550;
+            color: #4a2c1f;
+            margin-bottom: 1.2rem;
+            border-left: 5px solid #c9875c;
+            padding-left: 1rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px dashed #e5d3c6;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: #5d3a27;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-a {
+            color: #4d382b;
+            font-size: 0.96rem;
+        }
+
+        .faq-a a {
+            color: #8f5d3b;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+
+        /* 底部链接 */
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.8rem 2.8rem;
+            padding: 1.2rem 1rem;
+            background: transparent;
+            margin-top: 0.4rem;
+        }
+
+        .footer-links a {
+            color: #4f3628;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 0.35rem 0.8rem;
+            border-radius: 40px;
+            background: #f7ede6;
+            box-shadow: 0 2px 6px rgba(80, 45, 25, 0.06);
+            transition: background 0.15s, box-shadow 0.15s;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            background: #edd9cb;
+            box-shadow: 0 4px 10px rgba(140, 75, 45, 0.12);
+        }
+
+        .footer-note {
+            text-align: center;
+            color: #604e40;
+            font-size: 0.85rem;
+            padding-top: 0.6rem;
+        }
+
+        .inline-link {
+            color: #8f5d3b;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- hero 区 -->
+        <div class="card hero">
+            <h1>雷速</h1>
+            <div class="sub">一个注重稳定与清晰的页面入口 · 省去反复查找的麻烦</div>
+        </div>
+
+        <!-- 优势区：四个卡片 -->
+        <div class="grid-4">
+            <div class="card">
+                <h3>入口固定</h3>
+                <p>统一指向，不随推广链接频繁变动，保存后即可安心使用。</p>
+            </div>
+            <div class="card">
+                <h3>结构明了</h3>
+                <p>页面按功能模块划分，减少无关干扰，直接找到所需内容。</p>
+            </div>
+            <div class="card">
+                <h3>适配常用设备</h3>
+                <p>手机与电脑均能较好显示，字体与按钮经过基础响应优化。</p>
+            </div>
+            <div class="card">
+                <h3>信息克制</h3>
+                <p>只陈列必要说明与摘要，不堆砌冗余文案，便于快速浏览。</p>
+            </div>
+        </div>
+
+        <!-- 说明区：双栏（左侧场景 & 右侧提示） -->
+        <div class="split">
+            <div class="card">
+                <h2>适合的场景</h2>
+                <p>日常需要打开某个固定面板或后台时，一个不变且清晰的入口能节省不少时间。无论你是第一次接触，还是已经熟悉，都可以把 <a href="https://portal-panel-leisu.com" class="inline-link">雷速</a> 作为起始页保留。</p>
+                <ul>
+                    <li>想保留一个干净的书签，不被广告干扰</li>
+                    <li>团队或朋友之间分享统一的访问地址</li>
+                    <li>从不同设备登录时，避免重复输入网址</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>几点提示</h2>
+                <p>该站点本身不收集用户数据，也不要求注册。页面内容不会自动跳转，所有交互取决于你主动点击。如遇到连接问题，可先检查网络环境或 DNS 设置。</p>
+                <p style="margin-top: 0.8rem;">另外，建议将 <strong>雷速</strong> 添加至浏览器收藏夹，方便下次直接打开。若页面显示异常，可尝试清除缓存后刷新。</p>
+            </div>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="faq-summary">
+            <div class="card">
+                <h2>常见疑问 · 摘要</h2>
+                <div class="faq-item">
+                    <div class="faq-q">这个链接是做什么的？</div>
+                    <div class="faq-a">它是一个面板入口的固定地址，页面内容为访问者提供简要说明和环境提示。你可以把 <a href="https://portal-panel-leisu.com">雷速</a> 当作一个起点。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">需要登录或付费吗？</div>
+                    <div class="faq-a">不需要。打开页面即可浏览说明，后续操作取决于目标站点本身的要求，本页不涉及任何付费或注册。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">为什么推荐收藏这个地址？</div>
+                    <div class="faq-a">因为入口稳定、页面轻量，而且说明内容会帮助你快速了解结构。省去每次搜索或询问的步骤。</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部链接区 -->
+        <div class="footer-links">
+            <a href="https://portal-panel-leisu.com">雷速</a>
+            <a href="#">关于此页</a>
+            <a href="#">内容说明</a>
+        </div>
+        <div class="footer-note">
+            © 简单说明页 · 无跟踪 · 仅供浏览参考
+        </div>
+
+    </div>
+</body>
+</html>
