@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ng体育 · 站点介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fafbfc;
+      color: #1e2a35;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      padding: 2.4rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    /* ----- hero ----- */
+    .hero {
+      margin-bottom: 2.8rem;
+      border-bottom: 1px solid #e5eaef;
+      padding-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #0b1a2b;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero .sub {
+      font-size: 1rem;
+      color: #5f6d7a;
+      margin-top: 0.2rem;
+    }
+
+    /* ----- 正文卡片感 ----- */
+    section {
+      margin-bottom: 2.6rem;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #0b1a2b;
+      margin-bottom: 0.9rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 3px;
+      height: 1.1rem;
+      background: #2c6b9e;
+      margin-right: 0.7rem;
+      border-radius: 2px;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      color: #2a3a48;
+    }
+
+    p a {
+      color: #1a5a84;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    p a:hover {
+      border-bottom: 1px solid #1a5a84;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 1.4rem 0 1.8rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.4rem 1.5rem;
+      flex: 1 1 180px;
+      min-width: 150px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04), 0 2px 8px rgba(0,0,0,0.02);
+      border: 1px solid #edf0f3;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+      color: #0b1a2b;
+    }
+
+    .card p {
+      font-size: 0.92rem;
+      color: #4c5b69;
+      margin-bottom: 0;
+    }
+
+    .highlight-list {
+      list-style: none;
+      margin: 0.8rem 0 1.4rem;
+    }
+
+    .highlight-list li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #edf0f3;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .highlight-list li:last-child {
+      border-bottom: none;
+    }
+
+    .highlight-list li::before {
+      content: '▹';
+      color: #2c6b9e;
+      margin-right: 0.7rem;
+      font-size: 1rem;
+    }
+
+    .faq-item {
+      margin: 1rem 0;
+      padding: 1rem 1.2rem;
+      background: #f7f9fc;
+      border-radius: 10px;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      color: #0b1a2b;
+    }
+
+    .faq-item p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    .note {
+      background: #f0f3f8;
+      border-radius: 10px;
+      padding: 1rem 1.3rem;
+      font-size: 0.95rem;
+      color: #2d4050;
+      border-left: 3px solid #2c6b9e;
+      margin: 1.6rem 0;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e1e7ed;
+      margin: 2.4rem 0 1.6rem;
+    }
+
+    .footer-note {
+      font-size: 0.86rem;
+      color: #6a7a89;
+      text-align: center;
+      padding-top: 0.8rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 550px) {
+      body {
+        padding: 1.6rem 0.8rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .card-grid {
+        flex-direction: column;
+      }
+      .card {
+        flex: 1 1 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Hero -->
+    <div class="hero">
+      <h1>ng体育 · 产品说明</h1>
+      <div class="sub">从站点介绍与可信说明的角度，认识这个工具</div>
+    </div>
+
+    <!-- 摘要 -->
+    <section>
+      <div class="section-title">站点摘要</div>
+      <p>
+        <strong>ng体育</strong> 是一个围绕运动数据与内容组织的信息型站点，提供赛事动态、项目解读及部分实用查询功能。站点本身以轻量、简洁的方式呈现，不追求大而全的资讯聚合，而更关注信息结构是否清晰、内容是否可靠。
+      </p>
+      <p>
+        目前 <a href="https://portal-cn-ngsport.com">ng体育</a> 主要面向对运动赛事有一定了解、希望快速定位关键信息的用户。你可以将它理解为一个经过筛选的信息窗口，而非自动聚合的信息流。
+      </p>
+    </section>
+
+    <!-- 亮点卡片 -->
+    <section>
+      <div class="section-title">几个值得留意的特点</div>
+      <div class="card-grid">
+        <div class="card">
+          <h3>内容组织</h3>
+          <p>分类明确、层级清晰，减少不必要的浏览负担。</p>
+        </div>
+        <div class="card">
+          <h3>信息克制</h3>
+          <p>不堆砌广告或诱导点击，页面重心放在内容本身。</p>
+        </div>
+        <div class="card">
+          <h3>访问流畅</h3>
+          <p>页面结构轻量，加载迅速，适合移动或桌面环境。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 场景 / 使用建议 -->
+    <section>
+      <div class="section-title">使用建议</div>
+      <ul class="highlight-list">
+        <li>如果你需要快速了解某个赛事的基本信息，<strong>ng体育</strong> 的栏目划分可以帮助你节省筛选时间。</li>
+        <li>适合在碎片时间浏览，也适合在做简单调研时作为参考来源之一。</li>
+        <li>站点不强制注册或留存信息，访问门槛低，直接使用即可。</li>
+        <li>如果你对内容深度有更高要求，可以搭配其他资料交叉验证。</li>
+      </ul>
+    </section>
+
+    <!-- 场景延伸 -->
+    <div class="note">
+      <strong>一个小提示：</strong> 初次访问时可以留意首页的导航分区，它们反映了站点的信息组织逻辑。部分板块会随赛事周期更新内容，保持一定的时效性。
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <section>
+      <div class="section-title">常见疑问摘要</div>
+      <div class="faq-item">
+        <strong>这个站点适合什么人？</strong>
+        <p>对运动领域有基础兴趣、想避开杂乱广告和过度营销的用户。内容偏实用，不是深度分析平台。</p>
+      </div>
+      <div class="faq-item">
+        <strong>内容更新频率如何？</strong>
+        <p>非实时滚动更新，但主要栏目的内容会根据赛事节奏进行合理调整，信息滞后在可接受范围内。</p>
+      </div>
+      <div class="faq-item">
+        <strong>是否需要特殊工具才能访问？</strong>
+        <p>不需要。站点使用标准 Web 技术，任何主流浏览器均可正常使用。</p>
+      </div>
+    </section>
+
+    <!-- 可信说明 -->
+    <section>
+      <div class="section-title">关于可信与使用</div>
+      <p>
+        <a href="https://portal-cn-ngsport.com">ng体育</a> 本身是一个独立的参考信息站点，内容均基于公开可查的信息源整理。站内不提供博彩、投注或任何形式的金融建议，也不引导用户进行非授权操作。建议将本站作为辅助了解的工具之一，在重要决策前保持多渠道查证。
+      </p>
+      <p>
+        如果你觉得站内信息对你有所帮助，可以将其加入书签方便回看；如果发现内容存在偏差，也欢迎通过站内联系渠道反馈。保持开放但审慎的态度，是使用任何信息类站点的好习惯。
+      </p>
+    </section>
+
+    <hr>
+    <div class="footer-note">
+      ng体育 · 简单可信的内容窗口
+    </div>
+  </div>
+</body>
+</html>
